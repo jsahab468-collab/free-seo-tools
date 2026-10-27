@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jsahab468-collab.github.io/free-seo-tools/sitemap.xml
