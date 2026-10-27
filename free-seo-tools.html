@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Free SEO Tools — YouTube Tag Generator, Meta Checker &amp; More</title>
+<meta name="description" content="Free, no-sign-up SEO tools that run entirely in your browser: YouTube Tag Generator, Meta Title & Description Checker, Meta Tag Generator, Slug & UTM Builder, and Word Counter with keyword density." />
+<meta property="og:title" content="Free SEO Tools — YouTube Tag Generator, Meta Checker & More" />
+<meta property="og:description" content="Five free SEO tools. No sign-up, no uploads, everything happens in your browser." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Free SEO Tools","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free SEO tools including a YouTube Tag Generator, Meta Title & Description Checker, Meta Tag Generator, Slug & UTM Builder, and Word Counter with keyword density."}
+</script>
+<style>
+:root{
+  --bg:#ffffff; --surface:#f5f7f4; --surface2:#edf0eb; --ink:#16211a; --muted:#5a6a5e;
+  --line:#dce2da; --line2:#cbd3c9;
+  --accent:#0e6b3d; --accent-hover:#0a5731; --accent-ink:#ffffff; --accent-soft:#e2f2e8; --accent-line:#b7dcc6;
+  --warn:#8a5200; --warn-bg:#fff3dc; --warn-line:#f0d9a8;
+  --bad:#b3261e; --bad-bg:#fdecea; --bad-line:#f3c1bc;
+  --good:#0e6b3d; --good-bg:#e2f2e8;
+  --code-bg:#152019; --code-ink:#e9f2ea; --code-line:#2a3a2e;
+  --radius:14px; --radius-sm:9px;
+  --shadow:0 1px 2px rgba(18,30,22,.06),0 8px 24px rgba(18,30,22,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e130f; --surface:#141b15; --surface2:#1b241d; --ink:#edf3ec; --muted:#a6b3a7;
+    --line:#28352b; --line2:#35443a;
+    --accent:#4cc38a; --accent-hover:#67d39e; --accent-ink:#08180f; --accent-soft:#16281d; --accent-line:#2c4a38;
+    --warn:#f2c063; --warn-bg:#2c2210; --warn-line:#5a4318;
+    --bad:#ff9a92; --bad-bg:#331512; --bad-line:#5c2620;
+    --good:#4cc38a; --good-bg:#16281d;
+    --code-bg:#0a0f0b; --code-ink:#d9e9dc; --code-line:#243227;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3{line-height:1.18;letter-spacing:-.015em;margin:0}
+p{margin:0}
+button,input,textarea,select{font:inherit;color:inherit}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;gap:20px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:17px;white-space:nowrap}
+.brand-mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+.brand-mark svg{width:19px;height:19px}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.04em}
+.topnav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 11px;border-radius:99px;white-space:nowrap}
+.topnav a:hover{color:var(--ink);background:var(--surface2)}
+.topnav a.active{color:var(--ink);background:var(--surface2)}
+.pill{flex:none;font-size:12.5px;font-weight:600;border:1px solid var(--accent-line);background:var(--accent-soft);color:var(--good);padding:5px 10px;border-radius:99px;white-space:nowrap}
+@media(max-width:760px){.pill{display:none}.topnav a{padding:7px 8px;font-size:13.5px}.brand small{display:none}.topbar-in{flex-wrap:wrap;height:auto;padding:10px 0 12px;gap:4px 12px}.topnav{order:3;width:100%;margin-left:0;flex-wrap:wrap;overflow:visible}}
+
+/* Hero */
+.hero{padding:52px 0 30px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:36px;align-items:start}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:36px}}
+.hero h1{font-size:clamp(34px,5.2vw,52px);font-weight:700;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-lede{margin-top:14px;font-size:18px;color:var(--muted);max-width:56ch}
+.hero-lede strong{color:var(--ink);font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:9px;padding:11px 18px;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,border-color .15s,transform .05s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{padding:8px 13px;font-size:14px;border-radius:8px}
+.btn-copy{background:var(--ink);color:var(--bg)}
+.btn-copy:hover{opacity:.88}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn-outline:hover{border-color:var(--ink)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:13.5px;color:var(--muted)}
+.hero-facts span{display:flex;align-items:center;gap:7px}
+.hero-facts i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;font-style:normal}
+.tool-index{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:8px;box-shadow:var(--shadow)}
+.tool-index h2{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);padding:10px 12px 6px;font-weight:600}
+.tool-index a{display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:var(--ink);padding:11px 12px;border-radius:10px}
+.tool-index a:hover{background:var(--surface2)}
+.tool-index a:hover .ti-arrow{transform:translateX(3px)}
+.ti-num{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--accent);border:1px solid var(--accent-line);background:var(--accent-soft);border-radius:7px;padding:3px 7px;flex:none;margin-top:1px}
+.ti-body{flex:1;min-width:0}
+.ti-body strong{display:block;font-size:15px}
+.ti-body span{display:block;font-size:13.5px;color:var(--muted);line-height:1.45}
+.ti-arrow{color:var(--muted);flex:none;font-size:18px;line-height:1.4;transition:transform .15s}
+
+/* Tool sections */
+main{padding-bottom:8px}
+.tool{padding:44px 0 8px;scroll-margin-top:80px}
+.tool-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.tool-no{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:8px;padding:6px 9px;flex:none}
+.tool-head h2{font-size:clamp(23px,3.4vw,29px)}
+.tool-head p{margin-top:6px;color:var(--muted);max-width:68ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.panel-grid{display:grid;grid-template-columns:1fr 1fr}
+.panel-grid > div{padding:22px}
+.panel-grid > div:first-child{border-right:1px solid var(--line)}
+@media(max-width:860px){.panel-grid{grid-template-columns:1fr}.panel-grid > div:first-child{border-right:0;border-bottom:1px solid var(--line)}.panel-grid > div{padding:18px}}
+.field{margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px}
+label .opt{font-weight:400;color:var(--muted)}
+.hint{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}
+input[type=text],input[type=url],textarea,select{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:9px;padding:11px 12px;font-size:15px;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+textarea{resize:vertical;min-height:96px;line-height:1.55}
+textarea.tall{min-height:190px}
+.counter-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;font-size:13px;color:var(--muted)}
+.counter-row b{color:var(--ink);font-weight:600}
+.checks{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13.5px;color:var(--muted)}
+.checks label{display:flex;align-items:center;gap:7px;margin:0;font-weight:400;cursor:pointer}
+.checks input{width:16px;height:16px;accent-color:var(--accent)}
+.output-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.output-head h3{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.output-actions{display:flex;gap:8px;flex-wrap:wrap}
+.empty{border:1px dashed var(--line2);border-radius:10px;padding:26px 18px;text-align:center;color:var(--muted);font-size:14.5px;line-height:1.6}
+.note{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--bg);border-radius:0 10px 10px 0;padding:13px 15px;font-size:14px;line-height:1.6}
+.note strong{font-weight:600}
+.note p + p{margin-top:6px}
+.note ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}
+.note li{margin:3px 0}
+
+/* Tags */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--bg);border:1px solid var(--line2);border-radius:99px;padding:6px 6px 6px 12px;font-family:"IBM Plex Mono",monospace;font-size:13px;max-width:100%}
+.chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip button{border:0;background:var(--surface2);color:var(--muted);width:20px;height:20px;border-radius:50%;cursor:pointer;font-size:14px;line-height:1;display:grid;place-items:center;flex:none;padding:0}
+.chip button:hover{background:var(--bad-bg);color:var(--bad)}
+.meter{height:8px;background:var(--surface2);border:1px solid var(--line);border-radius:99px;overflow:hidden;margin-top:8px}
+.meter i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.meter.over i{background:var(--bad)}
+.title-ideas{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.title-ideas li{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:14.5px;line-height:1.5}
+.title-ideas button{flex:none;margin-left:auto}
+.mini-btn{border:1px solid var(--line2);background:var(--bg);border-radius:7px;padding:5px 9px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.mini-btn:hover{border-color:var(--ink)}
+.subhead{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:20px 0 10px}
+.subhead:first-child{margin-top:0}
+
+/* SERP preview */
+.serp{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px}
+.serp-top{display:flex;align-items:center;gap:10px;margin-bottom:6px;min-width:0}
+.favicon{width:28px;height:28px;border-radius:50%;background:var(--surface2);border:1px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--muted);flex:none;text-transform:uppercase}
+.serp-site{font-size:13.5px;line-height:1.35;min-width:0}
+.serp-site b{display:block;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.serp-site span{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;font-size:12.5px}
+.serp-title{color:#1a0dab;font-size:19px;line-height:1.35;font-weight:400;word-break:break-word}
+@media (prefers-color-scheme: dark){.serp-title{color:#8ab4f8}}
+.serp-title:hover{text-decoration:underline}
+.serp-desc{color:var(--muted);font-size:14px;line-height:1.55;margin-top:4px;word-break:break-word}
+.serp-desc b{color:var(--ink);font-weight:600}
+.serp.mobile{max-width:390px}
+.serp.mobile .serp-title{font-size:17px}
+.seg{display:inline-flex;background:var(--surface2);border:1px solid var(--line);border-radius:9px;padding:3px;gap:3px}
+.seg button{border:0;background:transparent;padding:6px 12px;border-radius:6px;font-size:13.5px;font-weight:600;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed=true]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.score-row{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.ring{position:relative;width:76px;height:76px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:19px}
+.check-list{list-style:none;margin:0;padding:0;display:grid;gap:9px;flex:1}
+.check-list li{display:flex;gap:9px;font-size:14px;line-height:1.5;align-items:flex-start}
+.dot{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:12px;font-weight:700;margin-top:1px}
+.dot.ok{background:var(--good-bg);color:var(--good);border:1px solid var(--accent-line)}
+.dot.warn{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-line)}
+.dot.bad{background:var(--bad-bg);color:var(--bad);border:1px solid var(--bad-line)}
+.dot.idle{background:var(--surface2);color:var(--muted);border:1px solid var(--line)}
+.check-list small{display:block;color:var(--muted);font-size:13px}
+
+/* Code output */
+.codebox{background:var(--code-bg);color:var(--code-ink);border:1px solid var(--code-line);border-radius:11px;padding:16px;overflow-x:auto}
+.codebox pre{margin:0;font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:13px;line-height:1.65;white-space:pre;tab-size:2}
+.codebox .dim{opacity:.55}
+
+/* Stats + density */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+@media(max-width:640px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 13px}
+.stat b{display:block;font-size:23px;line-height:1.1;letter-spacing:-.02em}
+.stat span{font-size:12.5px;color:var(--muted)}
+.density{width:100%;border-collapse:collapse;font-size:14px}
+.density th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 8px 8px 0;border-bottom:1px solid var(--line);font-weight:600}
+.density td{padding:8px 8px 8px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.density td.num,.density th.num{text-align:right}
+.bar{height:7px;background:var(--surface2);border-radius:99px;overflow:hidden;min-width:70px}
+.bar i{display:block;height:100%;background:var(--accent)}
+.kw{font-family:"IBM Plex Mono",monospace;font-size:13px}
+.slug-out{font-family:"IBM Plex Mono",monospace;font-size:15px;word-break:break-all;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:13px 14px;line-height:1.6}
+.slug-out:empty::before{content:"Your slug will appear here.";color:var(--muted);font-family:"IBM Plex Sans",sans-serif;font-size:14px}
+.utm-out:empty::before{content:"Your tracked link will appear here.";color:var(--muted);font-family:"IBM Plex Sans",sans-serif;font-size:14px}
+
+/* Info sections */
+.info{padding:46px 0 10px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.info-grid{grid-template-columns:1fr}}
+.info-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--surface)}
+.info-card h2{font-size:19px;margin-bottom:9px}
+.info-card p,.info-card li{font-size:14.5px;color:var(--muted);line-height:1.65}
+.info-card p b,.info-card li b{color:var(--ink);font-weight:600}
+.info-card ul{margin:8px 0 0;padding-left:18px}
+.faq{padding:34px 0 10px}
+.faq h2{font-size:clamp(23px,3.4vw,29px);margin-bottom:16px}
+details{border:1px solid var(--line);border-radius:11px;background:var(--surface);margin-bottom:9px;overflow:hidden}
+details summary{cursor:pointer;padding:15px 18px;font-weight:600;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:22px;font-weight:400;color:var(--muted);flex:none;line-height:1}
+details[open ] summary::after{content:"–"}
+details p{padding:0 18px 16px;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:75ch}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 38px}
+.foot{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:flex-start;font-size:14px;color:var(--muted)}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap}
+.foot a{color:var(--muted);text-decoration:none}
+.foot a:hover{color:var(--ink);text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:99px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60;box-shadow:0 8px 28px rgba(0,0,0,.25);max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/><path d="M7.5 10.5h6M10.5 7.5v6"/></svg>
+      </span>
+      <span>Free SEO Tools<small>NO SIGN-UP · RUNS IN YOUR BROWSER</small></span>
+    </a>
+    <nav class="topnav" aria-label="Tools">
+      <a href="#tags">Tag Generator</a>
+      <a href="#meta-checker">Meta Checker</a>
+      <a href="#meta-generator">Meta Tags</a>
+      <a href="#slug">Slug &amp; UTM</a>
+      <a href="#words">Word Counter</a>
+    </nav>
+    <span class="pill">100% free</span>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Small SEO jobs, done in <em>seconds</em> — free, with nothing to install.</h1>
+        <p class="hero-lede">Five tools for the checks creators and site owners run every day: tags for a YouTube video, a title that fits Google's results page, clean meta tags, a readable URL, and a quick read on keyword density. <strong>Your text never leaves this page</strong> — everything is calculated in your browser.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tags">Start with the Tag Generator</a>
+          <a class="btn btn-ghost" href="#meta-checker">Check a meta title</a>
+        </div>
+        <div class="hero-facts">
+          <span><i></i>5 tools</span>
+          <span><i></i>No account, no email</span>
+          <span><i></i>No uploads or tracking</span>
+          <span><i></i>Works on phone &amp; desktop</span>
+        </div>
+      </div>
+      <nav class="tool-index" aria-label="All tools">
+        <h2>All tools</h2>
+        <a href="#tags"><span class="ti-num">01</span><span class="ti-body"><strong>YouTube Tag Generator</strong><span>Relevant tags under YouTube's 500-character limit, plus title ideas.</span></span><span class="ti-arrow" aria-hidden="true">→</span></a>
+        <a href="#meta-checker"><span class="ti-num">02</span><span class="ti-body"><strong>Meta Title &amp; Description Checker</strong><span>Live Google preview, pixel widths, and a plain-English checklist.</span></span><span class="ti-arrow" aria-hidden="true">→</span></a>
+        <a href="#meta-generator"><span class="ti-num">03</span><span class="ti-body"><strong>Meta Tag Generator</strong><span>SEO, Open Graph and Twitter card tags, ready to paste into your page.</span></span><span class="ti-arrow" aria-hidden="true">→</span></a>
+        <a href="#slug"><span class="ti-num">04</span><span class="ti-body"><strong>Slug &amp; UTM Builder</strong><span>Clean URLs from any headline, plus trackable campaign links.</span></span><span class="ti-arrow" aria-hidden="true">→</span></a>
+        <a href="#words"><span class="ti-num">05</span><span class="ti-body"><strong>Word Counter &amp; Keyword Density</strong><span>Word counts, reading time, and which words you are repeating most.</span></span><span class="ti-arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+  <!-- 01 TAG GENERATOR -->
+  <section class="tool" id="tags">
+    <div class="tool-head">
+      <span class="tool-no">01</span>
+      <div>
+        <h2>YouTube Tag Generator</h2>
+        <p>Type your video's topic and get a set of relevant tags that fits YouTube's 500-character limit — with singular and plural forms, question phrases, and beginner and tutorial variations included.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-grid">
+        <div>
+          <div class="field">
+            <label for="tag-topic">Video topic</label>
+            <input type="text" id="tag-topic" placeholder="e.g. how to make biryani at home" autocomplete="off" />
+            <p class="hint">One clear topic works best. Use the words a viewer would actually type into search.</p>
+          </div>
+          <div class="field">
+            <label for="tag-extra">Extra keywords <span class="opt">(optional, comma separated)</span></label>
+            <input type="text" id="tag-extra" placeholder="e.g. easy recipe, pakistani food, dinner ideas" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label>Include</label>
+            <div class="checks">
+              <label><input type="checkbox" id="opt-year" checked /> Current year (2026)</label>
+              <label><input type="checkbox" id="opt-howto" checked /> “How to” phrases</label>
+              <label><input type="checkbox" id="opt-beginner" checked /> Beginner variations</label>
+              <label><input type="checkbox" id="opt-questions" checked /> Question phrases</label>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="gen-tags" type="button">Generate tags</button>
+          <button class="btn btn-outline" id="tag-example" type="button">Try an example</button>
+        </div>
+        <div>
+          <div class="output-head">
+            <h3>Your tags</h3>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-copy" id="copy-tags" type="button">Copy all</button>
+              <button class="btn btn-sm btn-outline" id="download-tags" type="button">Download .txt</button>
+            </div>
+          </div>
+          <div id="tag-output">
+            <div class="empty">Your tags will appear here.<br />Click a tag's × to remove it before copying.</div>
+          </div>
+          <div class="counter-row" aria-live="polite"><span><b id="tag-count">0</b> tags</span><span><b id="tag-chars">0</b> / 500 characters</span></div>
+          <div class="meter" id="tag-meter" aria-hidden="true"><i style="width:0%"></i></div>
+          <p class="hint" id="tag-limit-note">YouTube allows up to 500 characters of tags per video. Staying under the limit means every tag you add actually counts.</p>
+          <h3 class="subhead">Title ideas for this topic</h3>
+          <ul class="title-ideas" id="title-ideas"><li style="color:var(--muted)">Generate tags to see five title ideas based on your topic.</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p><strong>How to use tags well.</strong> Put your most important, most specific tag first — YouTube weighs early tags more. Mix exact phrases (“biryani recipe”) with broader ones (“pakistani food”), and don't repeat the same word in ten near-identical tags.</p>
+      <p>Tags help YouTube understand a video; they don't replace a good title, thumbnail, and description. If a tag doesn't describe your video, leave it out — misleading tags can hurt more than they help.</p>
+    </div>
+  </section>
+
+  <!-- 02 META CHECKER -->
+  <section class="tool" id="meta-checker">
+    <div class="tool-head">
+      <span class="tool-no">02</span>
+      <div>
+        <h2>Meta Title &amp; Description Checker</h2>
+        <p>See exactly how your page would look in Google's results, and whether your title and description fit. Lengths are checked in both characters and estimated pixels, because Google truncates by width, not by character count.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-grid">
+        <div>
+          <div class="field">
+            <label for="mc-title">Page title</label>
+            <input type="text" id="mc-title" placeholder="e.g. Five Guys Menu with Prices UK — Burgers, Fries & Shakes" autocomplete="off" />
+            <div class="counter-row"><span><b id="mc-title-count">0</b> characters</span><span><b id="mc-title-px">0</b> px of ~600 px</span></div>
+          </div>
+          <div class="field">
+            <label for="mc-desc">Meta description</label>
+            <textarea id="mc-desc" placeholder="e.g. See the full Five Guys UK menu with prices, calories and toppings. Burgers, fries, shakes and more — updated for 2026."></textarea>
+            <div class="counter-row"><span><b id="mc-desc-count">0</b> characters</span><span><b id="mc-desc-px">0</b> px of ~920 px</span></div>
+          </div>
+          <div class="field">
+            <label for="mc-keyword">Focus keyword <span class="opt">(optional)</span></label>
+            <input type="text" id="mc-keyword" placeholder="e.g. five guys menu prices" autocomplete="off" />
+            <p class="hint">If you add one, the checker looks for it in your title and description.</p>
+          </div>
+          <div class="field">
+            <label for="mc-url">Page URL <span class="opt">(for the preview only)</span></label>
+            <input type="url" id="mc-url" placeholder="https://example.com/your-page" autocomplete="off" />
+          </div>
+          <button class="btn btn-outline" id="mc-example" type="button">Load an example</button>
+        </div>
+        <div>
+          <div class="output-head">
+            <h3>Google preview</h3>
+            <div class="seg" role="group" aria-label="Preview device">
+              <button type="button" id="seg-desktop" aria-pressed="true">Desktop</button>
+              <button type="button" id="seg-mobile" aria-pressed="false">Mobile</button>
+            </div>
+          </div>
+          <div class="serp" id="serp">
+            <div class="serp-top">
+              <span class="favicon" id="serp-favicon">E</span>
+              <div class="serp-site"><b id="serp-site">example.com</b><span id="serp-path">https://example.com › your-page</span></div>
+            </div>
+            <div class="serp-title" id="serp-title">Your page title will appear here</div>
+            <div class="serp-desc" id="serp-desc">Your meta description will appear here. Write something that tells a searcher, in one or two sentences, why this page answers their question.</div>
+          </div>
+          <h3 class="subhead">Checklist &amp; score</h3>
+          <div class="score-row">
+            <div class="ring" role="img" aria-label="SEO score">
+              <svg width="76" height="76" viewBox="0 0 76 76"><circle cx="38" cy="38" r="32" fill="none" stroke="var(--surface2)" stroke-width="8"/><circle id="ring-fill" cx="38" cy="38" r="32" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="201.06" stroke-dashoffset="201.06"/></svg>
+              <b id="ring-score">–</b>
+            </div>
+            <ul class="check-list" id="check-list">
+              <li><span class="dot idle">•</span><span>Add a title and description to start the check.</span></li>
+            </ul>
+          </div>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-copy" id="copy-meta" type="button">Copy title + description</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p><strong>What “good” looks like.</strong> Titles usually display fully up to about 50–60 characters (600&nbsp;px); descriptions up to about 150–160 characters (920&nbsp;px). Shorter is safer than longer — a truncated title can cut off your most important words.</p>
+      <p>Write the description for the person searching, not for Google: one clear promise of what the page delivers, in natural language, with the keyword used once if it fits.</p>
+    </div>
+  </section>
+
+  <!-- 03 META TAG GENERATOR -->
+  <section class="tool" id="meta-generator">
+    <div class="tool-head">
+      <span class="tool-no">03</span>
+      <div>
+        <h2>Meta Tag Generator</h2>
+        <p>Fill in the details once and get the full block of HTML meta tags for your page — standard SEO tags, Open Graph for Facebook and WhatsApp, and Twitter cards — ready to paste inside the <span class="mono">&lt;head&gt;</span>.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-grid">
+        <div>
+          <div class="field">
+            <label for="mg-title">Page title</label>
+            <input type="text" id="mg-title" placeholder="e.g. Five Guys Menu with Prices UK (2026)" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="mg-desc">Meta description</label>
+            <textarea id="mg-desc" placeholder="One or two sentences describing the page."></textarea>
+          </div>
+          <div class="field">
+            <label for="mg-keywords">Keywords <span class="opt">(optional, comma separated)</span></label>
+            <input type="text" id="mg-keywords" placeholder="e.g. five guys menu, five guys prices uk" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="mg-url">Canonical page URL</label>
+            <input type="url" id="mg-url" placeholder="https://example.com/your-page" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="mg-image">Social share image URL <span class="opt">(optional)</span></label>
+            <input type="url" id="mg-image" placeholder="https://example.com/images/share.jpg" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="mg-site">Site name <span class="opt">(optional)</span></label>
+            <input type="text" id="mg-site" placeholder="e.g. Five Guys Menu UK" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="mg-type">Page type</label>
+            <select id="mg-type">
+              <option value="website">Website (general page)</option>
+              <option value="article">Article / blog post</option>
+              <option value="product">Product page</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Search engine instructions</label>
+            <div class="checks">
+              <label><input type="checkbox" id="mg-index" checked /> Allow indexing</label>
+              <label><input type="checkbox" id="mg-follow" checked /> Allow following links</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="output-head">
+            <h3>Your meta tags</h3>
+            <div class="output-actions">
+              <button class="btn btn-sm btn-copy" id="copy-meta-tags" type="button">Copy code</button>
+              <button class="btn btn-sm btn-outline" id="download-meta-tags" type="button">Download .html</button>
+            </div>
+          </div>
+          <div class="codebox"><pre id="mg-output" aria-live="polite"><span class="dim">&lt;!-- Fill in the form and your meta tags will appear here. --&gt;</span></pre></div>
+          <p class="hint">Paste this block inside the <span class="mono">&lt;head&gt;</span> of your HTML, above the closing <span class="mono">&lt;/head&gt;</span> tag. Only fill in fields you actually have — empty tags are left out automatically.</p>
+          <h3 class="subhead">Included automatically</h3>
+          <p class="hint" style="margin-top:0">Charset and viewport tags, plus <span class="mono">og:title</span>, <span class="mono">og:description</span>, <span class="mono">og:url</span>, <span class="mono">og:type</span>, <span class="mono">og:image</span> when an image URL is given, and a <span class="mono">twitter:card</span> set to <span class="mono">summary_large_image</span> with an image, or <span class="mono">summary</span> without one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SLUG + UTM -->
+  <section class="tool" id="slug">
+    <div class="tool-head">
+      <span class="tool-no">04</span>
+      <div>
+        <h2>Slug &amp; UTM Builder</h2>
+        <p>Turn any headline into a short, readable URL slug — then, if the link is for a campaign, add UTM tracking so you can see in analytics exactly where its visitors came from.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-grid">
+        <div>
+          <div class="field">
+            <label for="slug-input">Headline or page title</label>
+            <input type="text" id="slug-input" placeholder="e.g. 10 Easy SEO Tips for Beginners in 2026!" autocomplete="off" />
+            <p class="hint">Slugs update as you type. Accents are converted (é → e) and punctuation is removed.</p>
+          </div>
+          <div class="field">
+            <label>Slug options</label>
+            <div class="checks">
+              <label><input type="checkbox" id="slug-stopwords" /> Remove common words (a, the, for, and…)</label>
+              <label><input type="checkbox" id="slug-year" /> Keep the year in the slug</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="slug-max">Maximum length <span class="opt">(characters)</span></label>
+            <select id="slug-max">
+              <option value="60" selected>60 (recommended)</option>
+              <option value="50">50</option>
+              <option value="75">75</option>
+              <option value="100">100 (no practical limit)</option>
+            </select>
+          </div>
+          <button class="btn btn-outline" id="slug-example" type="button">Try an example</button>
+        </div>
+        <div>
+          <div class="output-head"><h3>Your slug</h3>
+            <div class="output-actions"><button class="btn btn-sm btn-copy" id="copy-slug" type="button">Copy slug</button></div>
+          </div>
+          <div class="slug-out" id="slug-output" aria-live="polite"></div>
+          <div class="counter-row"><span><b id="slug-count">0</b> characters</span><span><b id="slug-words">0</b> words</span></div>
+
+          <h3 class="subhead">Add UTM tracking <span style="text-transform:none;letter-spacing:0;font-weight:400">(optional)</span></h3>
+          <div class="field">
+            <label for="utm-base">Base URL</label>
+            <input type="url" id="utm-base" placeholder="https://example.com/your-page" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="utm-source">Source <span class="opt">— where the traffic comes from</span></label>
+            <input type="text" id="utm-source" placeholder="e.g. facebook, newsletter, youtube" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="utm-medium">Medium <span class="opt">— the channel</span></label>
+            <input type="text" id="utm-medium" placeholder="e.g. social, email, cpc" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="utm-campaign">Campaign name</label>
+            <input type="text" id="utm-campaign" placeholder="e.g. summer-sale-2026" autocomplete="off" />
+          </div>
+          <div class="output-head" style="margin-top:16px"><h3>Tracked link</h3>
+            <div class="output-actions"><button class="btn btn-sm btn-copy" id="copy-utm" type="button">Copy tracked URL</button></div>
+          </div>
+          <div class="slug-out utm-out" id="utm-output" aria-live="polite"></div>
+          <p class="hint">Only source, medium and campaign are required for a usable UTM link. The link is built with proper encoding, so spaces and special characters are handled for you.</p>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p><strong>Good slug habits.</strong> Keep it short, use real words a person would understand, and avoid dates and numbers that will go stale — unless the year is genuinely part of the content. Never change a slug on a page that already ranks without setting up a redirect from the old URL.</p>
+    </div>
+  </section>
+
+  <!-- 05 WORD COUNTER -->
+  <section class="tool" id="words">
+    <div class="tool-head">
+      <span class="tool-no">05</span>
+      <div>
+        <h2>Word Counter &amp; Keyword Density</h2>
+        <p>Paste an article, description, or script and get its length at a glance — plus the words you use most, so you can spot repetition or keyword stuffing before you publish.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-grid">
+        <div>
+          <div class="field">
+            <label for="wc-text">Your text</label>
+            <textarea class="tall" id="wc-text" placeholder="Paste or type your text here…"></textarea>
+            <div class="counter-row"><span><b id="wc-words-inline">0</b> words</span><span><b id="wc-chars-inline">0</b> characters</span></div>
+          </div>
+          <div class="output-actions">
+            <button class="btn btn-sm btn-outline" id="wc-sample" type="button">Load sample text</button>
+            <button class="btn btn-sm btn-outline" id="wc-clear" type="button">Clear</button>
+          </div>
+          <p class="hint">Nothing you paste is uploaded or saved. Closing the tab erases it.</p>
+        </div>
+        <div>
+          <div class="stat-grid">
+            <div class="stat"><b id="st-words">0</b><span>Words</span></div>
+            <div class="stat"><b id="st-chars">0</b><span>Characters</span></div>
+            <div class="stat"><b id="st-sent">0</b><span>Sentences</span></div>
+            <div class="stat"><b id="st-read">0 min</b><span>Reading time</span></div>
+          </div>
+          <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="stat"><b id="st-chars-ns">0</b><span>Chars, no spaces</span></div>
+            <div class="stat"><b id="st-para">0</b><span>Paragraphs</span></div>
+            <div class="stat"><b id="st-avg">0</b><span>Avg. word length</span></div>
+          </div>
+          <div class="output-head"><h3>Most used words</h3><span class="hint" style="margin:0">Common words excluded</span></div>
+          <div id="density-output"><div class="empty">Paste some text to see its most frequent words and their density.</div></div>
+          <p class="hint" id="density-note" style="margin-top:10px"></p>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p><strong>Reading density, not stuffing.</strong> A keyword density around 1–2% reads naturally for most articles. If one phrase is over 3%, it usually means the text is repeating itself — rewrite a few sentences in different words instead of deleting the keyword entirely.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Are these tools really free?</summary>
+      <p>Yes. Every tool on this page is free to use, with no account, no email address, and no usage limit. The tools run entirely in your browser, so there is nothing to pay for on a server.</p>
+    </details>
+    <details>
+      <summary>Is my text sent anywhere?</summary>
+      <p>No. All five tools calculate their results locally, in your browser, using JavaScript on this page. Your titles, descriptions, tags and pasted text are never uploaded, stored, or shared. Closing the tab removes them.</p>
+    </details>
+    <details>
+      <summary>How many YouTube tags should I use?</summary>
+      <p>There is no fixed number — YouTube's limit is 500 characters in total. Most creators use 10–20 relevant tags. Relevance matters far more than quantity: a few exact, honest tags beat a long list of loosely related ones.</p>
+    </details>
+    <details>
+      <summary>Why does the Meta Checker measure pixels as well as characters?</summary>
+      <p>Google truncates titles and descriptions by the width they take up on screen, and a wide letter like “W” takes more room than a narrow one like “i”. Two titles with the same character count can display very differently, so the pixel estimate is the more reliable guide.</p>
+    </details>
+    <details>
+      <summary>Do meta keywords still help rankings?</summary>
+      <p>No — Google has ignored the meta keywords tag for ranking for many years, and it is not included in the generator's main output by default. The generator does include it as an optional field for other tools that may still read it, but it will not improve your position in search results.</p>
+    </details>
+    <details>
+      <summary>Can I use these tools on my phone?</summary>
+      <p>Yes. The page is designed to work on phones and desktops, and every tool — including copy buttons — works with touch. The Meta Checker also has a mobile preview so you can see how a result looks on a small screen.</p>
+    </details>
+  </section>
+
+  <!-- INFO -->
+  <section class="info">
+    <div class="info-grid">
+      <article class="info-card" id="about">
+        <h2>About</h2>
+        <p><b>Free SEO Tools</b> is a small collection of everyday SEO utilities, built by <b>Hammad Jutt</b>, an SEO specialist who also runs a YouTube channel and offers SEO audits. The tools here are the same quick checks used in real audit work — title lengths, meta tags, slugs, tags, and keyword density — made free so anyone can run them without hiring anyone or signing up anywhere.</p>
+        <p style="margin-top:8px">New tools are added when a job keeps coming up in real work. Tool requests are welcome — see Contact.</p>
+      </article>
+      <article class="info-card" id="privacy">
+        <h2>Privacy</h2>
+        <p><b>Nothing you type leaves your device.</b> This is a static page: there is no server, no database, and no account system. The tools run in your browser and nothing you enter is uploaded, logged, or stored — no cookies are set for the tools themselves, and closing the tab clears your inputs.</p>
+        <p style="margin-top:8px">If advertising is added in future, it will be served by the ad provider under its own privacy policy, and this page will be updated to say so.</p>
+      </article>
+      <article class="info-card" id="contact">
+        <h2>Contact</h2>
+        <p>Found a bug, want a tool added, or need help with an SEO audit for your own site? The fastest way to reach Hammad is through his freelance profile, where SEO audit and YouTube services are listed with current availability.</p>
+        <p style="margin-top:12px"><a class="btn btn-sm btn-primary" href="https://www.fiverr.com/hammadjutt804" target="_blank" rel="noopener">Contact via Fiverr profile</a></p>
+        <p style="margin-top:10px">Please include the tool name and, if reporting a bug, the text you entered and what you expected to happen.</p>
+      </article>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span><strong style="color:var(--ink)">Free SEO Tools</strong> — free tools, no sign-up, everything in your browser.</span>
+    <nav aria-label="Footer">
+      <a href="#tags">Tag Generator</a>
+      <a href="#meta-checker">Meta Checker</a>
+      <a href="#meta-generator">Meta Tags</a>
+      <a href="#slug">Slug &amp; UTM</a>
+      <a href="#words">Word Counter</a>
+      <a href="#about">About</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span>© 2026 Hammad Jutt. Tools are provided as-is; always preview changes on your own site before publishing.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<p class="sr">Free SEO tools: YouTube Tag Generator, Meta Title and Description Checker, Meta Tag Generator, Slug and UTM Builder, and Word Counter with keyword density.</p>
+
+<script>
+(function(){
+"use strict";
+var $ = function(id){ return document.getElementById(id); };
+var toastEl = $("toast"), toastTimer = null;
+function toast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ toastEl.classList.remove("show"); }, 2200);
+}
+function copyText(text, msg){
+  if(!text || !text.trim()){ toast("Nothing to copy yet."); return; }
+  function done(){ toast(msg || "Copied to clipboard."); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+  } else { fallback(); }
+  function fallback(){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){ toast("Copy failed — please select and copy manually."); }
+    document.body.removeChild(ta);
+  }
+}
+function downloadFile(name, content, type){
+  var blob = new Blob([content], {type: type || "text/plain;charset=utf-8"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url; a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); }, 300);
+}
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function titleCase(s){
+  return s.replace(/\w\S*/g, function(w){ return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(); });
+}
+function trimPunct(s){ return s.replace(/^[\s"'“”‘’]+|[\s"'“”‘’.,!?;:]+$/g,""); }
+
+/* ---------- 01 TAG GENERATOR ---------- */
+var tags = [];
+function tagChars(list){ return list.join(", ").length; }
+function renderTags(){
+  var out = $("tag-output");
+  var chars = tagChars(tags);
+  $("tag-count").textContent = tags.length;
+  $("tag-chars").textContent = chars;
+  var meter = $("tag-meter");
+  meter.querySelector("i").style.width = Math.min(100, chars/500*100) + "%";
+  meter.classList.toggle("over", chars > 500);
+  if(!tags.length){
+    out.innerHTML = '<div class="empty">Your tags will appear here.<br />Click a tag\u2019s \u00d7 to remove it before copying.</div>';
+    return;
+  }
+  out.innerHTML = "";
+  var wrap = document.createElement("div"); wrap.className = "chips";
+  tags.forEach(function(t, i){
+    var c = document.createElement("span"); c.className = "chip";
+    var s = document.createElement("span"); s.textContent = t;
+    var b = document.createElement("button"); b.type="button"; b.textContent="\u00d7";
+    b.setAttribute("aria-label","Remove tag: "+t);
+    b.addEventListener("click", function(){ tags.splice(i,1); renderTags(); });
+    c.appendChild(s); c.appendChild(b); wrap.appendChild(c);
+  });
+  out.appendChild(wrap);
+}
+function addTag(list, t){
+  t = trimPunct(String(t||"").toLowerCase().replace(/\s+/g," ").trim());
+  if(!t || t.length > 60) return;
+  if(list.indexOf(t) === -1) list.push(t);
+}
+function singular(word){
+  if(/ies$/.test(word) && word.length>4) return word.slice(0,-3)+"y";
+  if(/sses$/.test(word)) return word.slice(0,-2);
+  if(/s$/.test(word) && !/ss$/.test(word) && word.length>3) return word.slice(0,-1);
+  return word;
+}
+function generateTags(){
+  var topicRaw = $("tag-topic").value.trim();
+  if(!topicRaw){ toast("Type a video topic first."); $("tag-topic").focus(); return; }
+  var topic = topicRaw.toLowerCase().replace(/\s+/g," ").trim();
+  var core = topic.replace(/^how to\s+/,"");
+  var extra = $("tag-extra").value.split(",").map(function(s){ return s.trim().toLowerCase(); }).filter(Boolean);
+  var useYear = $("opt-year").checked, useHow = $("opt-howto").checked,
+      useBeg = $("opt-beginner").checked, useQ = $("opt-questions").checked;
+  var list = [];
+  addTag(list, topic);
+  var words = topic.split(" ").filter(Boolean);
+  // Singular / plural of the last word
+  if(words.length){
+    var last = words[words.length-1], sing = singular(last);
+    if(sing !== last) addTag(list, words.slice(0,-1).concat([sing]).join(" "));
+    else addTag(list, topic + "s");
+  }
+  // User's own extra keywords come early so they survive the 500-char trim.
+  extra.forEach(function(k){
+    addTag(list, k);
+    addTag(list, k + " " + topic);
+    addTag(list, topic + " " + k);
+  });
+  addTag(list, topic + " tutorial");
+  addTag(list, topic + " guide");  addTag(list, topic + " tips");
+  addTag(list, topic + " explained");
+  addTag(list, topic + " for beginners");
+  if(useYear) addTag(list, topic + " 2026");
+  if(useHow) addTag(list, "how to " + core);
+  if(useHow) addTag(list, "how to " + core + " step by step");
+  if(useBeg) addTag(list, topic + " for beginners step by step");
+  if(useQ && core === topic){ addTag(list, "what is " + core); addTag(list, "how does " + core + " work"); }
+  if(useQ && core !== topic){ addTag(list, "easy " + core); addTag(list, core + " step by step"); }
+  if(useBeg) addTag(list, "beginner " + topic);
+  addTag(list, topic + " full course");
+  if(useYear) addTag(list, "how to " + core + " 2026");
+  if(words.length >= 2){
+    addTag(list, words.slice(0,2).join(" "));
+    addTag(list, words.slice(-2).join(" "));
+  }
+  // Broader single-word tags from the topic
+  words.forEach(function(w){ if(w.length > 3) addTag(list, w); });
+  // Trim to 500 characters: keep the most specific tags first
+  while(list.length > 1 && tagChars(list) > 500){ list.pop(); }
+  tags = list;
+  renderTags();
+  renderTitles(topicRaw);
+  toast(tags.length + " tags generated (" + tagChars(tags) + " characters).");
+}
+function renderTitles(topicRaw){
+  var raw = trimPunct(topicRaw).toLowerCase();
+  var isHow = /^how to\s+/.test(raw);
+  var core = isHow ? raw.replace(/^how to\s+/,"") : raw;
+  var t = titleCase(core);
+  var tFull = titleCase(raw);
+  if(!t){ return; }
+  var ideas = [
+    (isHow ? tFull : "How to " + t) + " in 2026 (Step-by-Step Guide)",
+    t + " for Beginners \u2014 Everything You Need to Know",
+    "5 " + t + " Tips That Actually Work",
+    t + " Explained in 10 Minutes",
+    "The Ultimate " + t + " Guide for 2026"
+  ];
+  var ul = $("title-ideas"); ul.innerHTML = "";
+  ideas.forEach(function(idea){
+    var li = document.createElement("li");
+    var sp = document.createElement("span"); sp.textContent = idea;
+    var b = document.createElement("button"); b.type="button"; b.className="mini-btn"; b.textContent="Copy";
+    b.addEventListener("click", function(){ copyText(idea, "Title idea copied."); });
+    li.appendChild(sp); li.appendChild(b); ul.appendChild(li);
+  });
+}
+$("gen-tags").addEventListener("click", generateTags);
+$("tag-topic").addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); generateTags(); } });
+$("tag-example").addEventListener("click", function(){
+  $("tag-topic").value = "how to make biryani at home";
+  $("tag-extra").value = "easy recipe, pakistani food, dinner ideas";
+  generateTags();
+});
+$("copy-tags").addEventListener("click", function(){ copyText(tags.join(", "), "Tags copied — paste them into YouTube Studio."); });
+$("download-tags").addEventListener("click", function(){
+  if(!tags.length){ toast("Generate tags first."); return; }
+  downloadFile("youtube-tags.txt", tags.join(", ") + "\n\n" + tags.join("\n") + "\n", "text/plain;charset=utf-8");
+  toast("Tags downloaded.");
+});
+renderTags();
+
+/* ---------- 02 META CHECKER ---------- */
+var measureCanvas = document.createElement("canvas");
+function pxWidth(text, font){
+  var ctx = measureCanvas.getContext("2d");
+  ctx.font = font;
+  return Math.round(ctx.measureText(text || "").width);
+}
+function checkItem(status, text, detail){
+  var icon = status === "ok" ? "\u2713" : status === "warn" ? "!" : status === "bad" ? "\u00d7" : "\u2022";
+  var cls = status === "ok" ? "ok" : status === "warn" ? "warn" : status === "bad" ? "bad" : "idle";
+  return '<li><span class="dot ' + cls + '">' + icon + '</span><span>' + text + (detail ? ' <small>' + detail + '</small>' : '') + '</span></li>';
+}
+function updateMetaChecker(){
+  var title = $("mc-title").value, desc = $("mc-desc").value,
+      kw = $("mc-keyword").value.trim().toLowerCase(), url = $("mc-url").value.trim();
+  var tLen = title.length, dLen = desc.length;
+  var tPx = pxWidth(title, "400 20px Arial"), dPx = pxWidth(desc, "400 14px Arial");
+  $("mc-title-count").textContent = tLen;
+  $("mc-title-px").textContent = tPx;
+  $("mc-desc-count").textContent = dLen;
+  $("mc-desc-px").textContent = dPx;
+  // SERP preview
+  $("serp-title").textContent = title || "Your page title will appear here";
+  var descEl = $("serp-desc");
+  descEl.textContent = "";
+  if(!desc){
+    descEl.textContent = "Your meta description will appear here. Write something that tells a searcher, in one or two sentences, why this page answers their question.";
+  } else if(kw){
+    // Bold keyword occurrences (case-insensitive, plain text safe via nodes)
+    var lower = desc.toLowerCase(), idx = 0, pos;
+    while((pos = lower.indexOf(kw, idx)) !== -1){
+      descEl.appendChild(document.createTextNode(desc.slice(idx, pos)));
+      var b = document.createElement("b"); b.textContent = desc.slice(pos, pos + kw.length);
+      descEl.appendChild(b); idx = pos + kw.length;
+    }
+    descEl.appendChild(document.createTextNode(desc.slice(idx)));
+  } else {
+    descEl.textContent = desc;
+  }
+  var host = "example.com", path = "https://example.com \u203a your-page";
+  if(url){
+    try{
+      var u = new URL(url);
+      host = u.hostname;
+      var p = u.pathname.replace(/^\//,"").replace(/\//g," \u203a ");
+      path = u.protocol + "//" + u.hostname + (p ? " \u203a " + p : "");
+    }catch(e){ host = url.replace(/^https?:\/\//,"").split("/")[0] || "example.com"; path = url; }
+  }
+  $("serp-site").textContent = host;
+  $("serp-path").textContent = path;
+  $("serp-favicon").textContent = (host.charAt(0) || "E").toUpperCase();
+  // Checks + score
+  var checks = [], score = 100;
+  function deduct(n){ score = Math.max(0, score - n); }
+  if(!title && !desc){
+    $("check-list").innerHTML = '<li><span class="dot idle">\u2022</span><span>Add a title and description to start the check.</span></li>';
+    $("ring-score").textContent = "\u2013";
+    $("ring-fill").style.strokeDashoffset = 201.06;
+    return;
+  }
+  if(!title){ checks.push(checkItem("bad","Add a page title.","Google shows your title as the main link — without one, it invents one.")); deduct(35); }
+  else if(tPx <= 600 && tLen >= 30){ checks.push(checkItem("ok","Title length looks good.",""+tLen+" characters, about "+tPx+" px — should display in full.")); }
+  else if(tPx <= 600){ checks.push(checkItem("warn","Title is quite short.",""+tLen+" characters. You have room to say more about what the page offers.")); deduct(10); }
+  else { checks.push(checkItem("bad","Title is likely to be cut off.","About "+tPx+" px, over the ~600 px Google usually shows. Move the key words earlier.")); deduct(20); }
+  if(!desc){ checks.push(checkItem("bad","Add a meta description.","Without one, Google picks text from the page — often badly.")); deduct(30); }
+  else if(dPx <= 920 && dLen >= 120){ checks.push(checkItem("ok","Description length looks good.",""+dLen+" characters, about "+dPx+" px — should display in full.")); }
+  else if(dPx <= 920){ checks.push(checkItem("warn","Description is quite short.",""+dLen+" characters. One more sentence could win the click.")); deduct(8); }
+  else { checks.push(checkItem("bad","Description is likely to be cut off.","About "+dPx+" px, over the ~920 px usually shown. Put the key point first.")); deduct(18); }
+  if(kw){
+    var inTitle = title.toLowerCase().indexOf(kw) !== -1;
+    var inDesc = desc.toLowerCase().indexOf(kw) !== -1;
+    if(inTitle) checks.push(checkItem("ok","Focus keyword is in the title.","Good — searchers see immediately that the page matches."));
+    else { checks.push(checkItem("warn","Focus keyword is missing from the title.","Adding it naturally can improve relevance and click-through.")); deduct(10); }
+    if(inDesc) checks.push(checkItem("ok","Focus keyword is in the description.","It will appear bold in results, which draws the eye."));
+    else if(desc){ checks.push(checkItem("warn","Focus keyword is missing from the description.","Use it once, in a natural sentence.")); deduct(6); }
+    if(title && title.toLowerCase().indexOf(kw) === 0) checks.push(checkItem("ok","Keyword appears at the start of the title.","Front-loading the keyword helps both readers and relevance."));
+  }
+  if(title && /[!]{2,}|[A-Z]{6,}/.test(title)) { checks.push(checkItem("warn","Title looks shouty.","Avoid ALL-CAPS words and repeated exclamation marks — Google may rewrite the title.")); deduct(5); }
+  if(desc && desc.split(/[.!?]+/).filter(function(s){ return s.trim(); }).length > 3) checks.push(checkItem("warn","Description runs to several sentences.","Two sentences usually read better in search results than four."));
+  $("check-list").innerHTML = checks.join("");
+  $("ring-score").textContent = score;
+  $("ring-fill").style.strokeDashoffset = (201.06 * (1 - score/100)).toFixed(2);
+  var ring = $("ring-fill");
+  ring.style.stroke = score >= 80 ? "var(--accent)" : score >= 50 ? "var(--warn)" : "var(--bad)";
+}
+["mc-title","mc-desc","mc-keyword","mc-url"].forEach(function(id){
+  $(id).addEventListener("input", updateMetaChecker);
+});
+$("mc-example").addEventListener("click", function(){
+  $("mc-title").value = "Five Guys Menu with Prices UK \u2014 Burgers, Fries & Shakes (2026)";
+  $("mc-desc").value = "See the full Five Guys UK menu with prices, calories and toppings. Burgers, fries, shakes and more \u2014 updated for 2026.";
+  $("mc-keyword").value = "five guys menu prices";
+  $("mc-url").value = "https://example.com/five-guys-menu-prices";
+  updateMetaChecker();
+});
+$("seg-desktop").addEventListener("click", function(){
+  $("serp").classList.remove("mobile");
+  $("seg-desktop").setAttribute("aria-pressed","true"); $("seg-mobile").setAttribute("aria-pressed","false");
+});
+$("seg-mobile").addEventListener("click", function(){
+  $("serp").classList.add("mobile");
+  $("seg-mobile").setAttribute("aria-pressed","true"); $("seg-desktop").setAttribute("aria-pressed","false");
+});
+$("copy-meta").addEventListener("click", function(){
+  var t = $("mc-title").value, d = $("mc-desc").value;
+  copyText("Title: " + t + "\nDescription: " + d, "Title and description copied.");
+});
+updateMetaChecker();
+
+/* ---------- 03 META TAG GENERATOR ---------- */
+function updateMetaTags(){
+  var title = $("mg-title").value.trim(), desc = $("mg-desc").value.trim(),
+      kws = $("mg-keywords").value.trim(), url = $("mg-url").value.trim(),
+      img = $("mg-image").value.trim(), site = $("mg-site").value.trim(),
+      type = $("mg-type").value,
+      robots = [];
+  if(!$("mg-index").checked) robots.push("noindex");
+  if(!$("mg-follow").checked) robots.push("nofollow");
+  if(!robots.length) robots = ["index","follow"];
+  var lines = [];
+  lines.push('<meta charset="UTF-8" />');
+  lines.push('<meta name="viewport" content="width=device-width, initial-scale=1" />');
+  if(title) lines.push('<title>' + esc(title) + '</title>');
+  if(desc) lines.push('<meta name="description" content="' + esc(desc) + '" />');
+  if(kws) lines.push('<meta name="keywords" content="' + esc(kws) + '" />');
+  lines.push('<meta name="robots" content="' + robots.join(", ") + '" />');
+  if(url) lines.push('<link rel="canonical" href="' + esc(url) + '" />');
+  if(title) lines.push('<meta property="og:title" content="' + esc(title) + '" />');
+  if(desc) lines.push('<meta property="og:description" content="' + esc(desc) + '" />');
+  if(url) lines.push('<meta property="og:url" content="' + esc(url) + '" />');
+  lines.push('<meta property="og:type" content="' + esc(type) + '" />');
+  if(site) lines.push('<meta property="og:site_name" content="' + esc(site) + '" />');
+  if(img) lines.push('<meta property="og:image" content="' + esc(img) + '" />');
+  lines.push('<meta name="twitter:card" content="' + (img ? "summary_large_image" : "summary") + '" />');
+  if(title) lines.push('<meta name="twitter:title" content="' + esc(title) + '" />');
+  if(desc) lines.push('<meta name="twitter:description" content="' + esc(desc) + '" />');
+  if(img) lines.push('<meta name="twitter:image" content="' + esc(img) + '" />');
+  var out = $("mg-output");
+  var hasContent = title || desc || url;
+  if(!hasContent){
+    out.innerHTML = '<span class="dim">&lt;!-- Fill in the form and your meta tags will appear here. --&gt;</span>';
+    out.dataset.code = "";
+  } else {
+    out.textContent = lines.join("\n");
+    out.dataset.code = lines.join("\n");
+  }
+}
+["mg-title","mg-desc","mg-keywords","mg-url","mg-image","mg-site","mg-type","mg-index","mg-follow"].forEach(function(id){
+  $(id).addEventListener("input", updateMetaTags);
+  $(id).addEventListener("change", updateMetaTags);
+});
+$("copy-meta-tags").addEventListener("click", function(){
+  copyText($("mg-output").dataset.code || "", "Meta tags copied — paste them inside <head>.");
+});
+$("download-meta-tags").addEventListener("click", function(){
+  var code = $("mg-output").dataset.code || "";
+  if(!code){ toast("Fill in the form first."); return; }
+  downloadFile("meta-tags.html", "<!-- Meta tags -->\n" + code + "\n", "text/html;charset=utf-8");
+  toast("Meta tags downloaded.");
+});
+updateMetaTags();
+
+/* ---------- 04 SLUG & UTM ---------- */
+var STOPWORDS = ["a","an","the","and","or","but","for","to","of","in","on","at","with","by","is","are","was","were","be","how","what","why","when","your","you","my","our","from","into","over","under"];
+function makeSlug(text){
+  var s = String(text || "").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  s = s.toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9\s-]/g," ").replace(/\s+/g," ").trim();
+  var words = s.split(" ").filter(Boolean);
+  if($("slug-stopwords").checked){
+    words = words.filter(function(w){ return STOPWORDS.indexOf(w) === -1; });
+    if(!words.length) words = s.split(" ").filter(Boolean);
+  }
+  if(!$("slug-year").checked){
+    words = words.filter(function(w){ return !/^(19|20)\d{2}$/.test(w); });
+  }
+  var slug = words.join("-");
+  var max = parseInt($("slug-max").value, 10) || 60;
+  if(slug.length > max){
+    slug = slug.slice(0, max);
+    var cut = slug.lastIndexOf("-");
+    if(cut > 20) slug = slug.slice(0, cut);
+    slug = slug.replace(/-+$/,"");
+  }
+  return slug;
+}
+function updateSlug(){
+  var slug = makeSlug($("slug-input").value);
+  $("slug-output").textContent = slug;
+  $("slug-count").textContent = slug.length;
+  $("slug-words").textContent = slug ? slug.split("-").length : 0;
+}
+function updateUtm(){
+  var base = $("utm-base").value.trim();
+  var source = $("utm-source").value.trim(), medium = $("utm-medium").value.trim(), campaign = $("utm-campaign").value.trim();
+  var out = $("utm-output");
+  if(!base){ out.textContent = ""; out.setAttribute("data-empty","1"); return; }
+  var params = [];
+  if(source) params.push("utm_source=" + encodeURIComponent(source));
+  if(medium) params.push("utm_medium=" + encodeURIComponent(medium));
+  if(campaign) params.push("utm_campaign=" + encodeURIComponent(campaign));
+  var sep = base.indexOf("?") !== -1 ? "&" : "?";
+  out.textContent = params.length ? base + sep + params.join("&") : base;
+}
+["slug-input","slug-stopwords","slug-year","slug-max"].forEach(function(id){
+  $(id).addEventListener("input", updateSlug);
+  $(id).addEventListener("change", updateSlug);
+});
+["utm-base","utm-source","utm-medium","utm-campaign"].forEach(function(id){
+  $(id).addEventListener("input", updateUtm);
+});
+$("slug-example").addEventListener("click", function(){
+  $("slug-input").value = "10 Easy SEO Tips for Beginners in 2026!";
+  updateSlug();
+});
+$("copy-slug").addEventListener("click", function(){ copyText($("slug-output").textContent, "Slug copied."); });
+$("copy-utm").addEventListener("click", function(){ copyText($("utm-output").textContent, "Tracked link copied."); });
+updateSlug(); updateUtm();
+
+/* ---------- 05 WORD COUNTER ---------- */
+var STOP = ("a,about,above,after,again,against,all,am,an,and,any,are,as,at,be,because,been,before,being,below,between,both,but,by,could,did,do,does,doing,down,during,each,few,for,from,further,had,has,have,having,he,her,here,hers,herself,him,himself,his,how,i,if,in,into,is,it,its,itself,let,me,more,most,my,myself,nor,of,on,once,only,or,other,ought,our,ours,ourselves,out,over,own,same,shan,she,should,so,some,such,than,that,the,their,theirs,them,themselves,then,there,these,they,this,those,through,to,too,under,until,up,very,was,we,were,what,when,where,which,while,who,whom,why,with,would,you,your,yours,yourself,yourselves,also,one,two,can,will,just,should,now,per,via").split(",");
+function updateWords(){
+  var text = $("wc-text").value;
+  var words = text.trim() ? text.trim().split(/\s+/).filter(Boolean) : [];
+  var wordCount = words.length;
+  var chars = text.length;
+  var charsNS = text.replace(/\s/g,"").length;
+  var sentences = text.trim() ? text.split(/[.!?]+/).filter(function(s){ return s.trim().length > 0; }).length : 0;
+  var paras = text.trim() ? text.split(/\n\s*\n/).filter(function(s){ return s.trim().length > 0; }).length : 0;
+  var readMin = wordCount ? Math.max(1, Math.round(wordCount/200)) : 0;
+  if(wordCount && wordCount < 200) readMin = Math.max(0, Math.round(wordCount/200*10)/10);
+  var avgLen = wordCount ? (charsNS/wordCount) : 0;
+  $("st-words").textContent = wordCount.toLocaleString("en-US");
+  $("st-chars").textContent = chars.toLocaleString("en-US");
+  $("st-sent").textContent = sentences.toLocaleString("en-US");
+  $("st-read").textContent = wordCount ? (readMin < 1 ? "< 1 min" : readMin + " min") : "0 min";
+  $("st-chars-ns").textContent = charsNS.toLocaleString("en-US");
+  $("st-para").textContent = paras.toLocaleString("en-US");
+  $("st-avg").textContent = avgLen ? avgLen.toFixed(1) : "0";
+  $("wc-words-inline").textContent = wordCount.toLocaleString("en-US");
+  $("wc-chars-inline").textContent = chars.toLocaleString("en-US");
+  // Density
+  var out = $("density-output"), note = $("density-note");
+  if(!wordCount){ out.innerHTML = '<div class="empty">Paste some text to see its most frequent words and their density.</div>'; note.textContent = ""; return; }
+  var tokens = text.toLowerCase().replace(/[^a-z0-9'\s-]/g," ").split(/\s+/).filter(function(w){
+    return w.length >= 3 && STOP.indexOf(w) === -1 && !/^\d+$/.test(w);
+  });
+  var counts = {};
+  tokens.forEach(function(w){ counts[w] = (counts[w]||0) + 1; });
+  var rows = Object.keys(counts).map(function(k){ return {w:k, c:counts[k]}; })
+    .sort(function(a,b){ return b.c - a.c || a.w.localeCompare(b.w); }).slice(0, 12);
+  if(!rows.length){ out.innerHTML = '<div class="empty">Not enough distinctive words yet — add more text.</div>'; note.textContent=""; return; }
+  var maxC = rows[0].c;
+  var html = '<table class="density"><thead><tr><th>Word</th><th>Count</th><th>Density</th><th class="num">Share</th></tr></thead><tbody>';
+  rows.forEach(function(r){
+    var dens = (r.c/wordCount*100);
+    html += '<tr><td class="kw">' + esc(r.w) + '</td><td class="num">' + r.c + '</td><td><div class="bar"><i style="width:' + Math.max(4, Math.round(r.c/maxC*100)) + '%"></i></div></td><td class="num">' + dens.toFixed(2) + '%</td></tr>';
+  });
+  html += '</tbody></table>';
+  out.innerHTML = html;
+  var top = rows[0], topDens = top.c/wordCount*100;
+  note.textContent = topDens > 3
+    ? "\u201c" + top.w + "\u201d appears " + topDens.toFixed(1) + "% of the time — consider varying the wording."
+    : "Top word \u201c" + top.w + "\u201d is " + topDens.toFixed(2) + "% of the text — within a natural range.";
+}
+$("wc-text").addEventListener("input", updateWords);
+$("wc-clear").addEventListener("click", function(){ $("wc-text").value=""; updateWords(); $("wc-text").focus(); });
+$("wc-sample").addEventListener("click", function(){
+  $("wc-text").value = "Search engine optimisation starts with understanding what people actually type into Google. Good SEO is not about tricks or shortcuts. It is about clear titles, honest descriptions, and content that answers the question better than the page next to it.\n\nWhen you write for search, write for the reader first. Use the words your audience uses, structure the page with helpful headings, and make sure every page has one clear purpose. Search engines reward pages that satisfy the searcher, and readers reward pages that respect their time.";
+  updateWords();
+});
+updateWords();
+
+/* Nav highlight */
+var navLinks = Array.prototype.slice.call(document.querySelectorAll(".topnav a"));
+var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+function onScroll(){
+  var y = window.scrollY + 120, current = null;
+  sections.forEach(function(s, i){ if(s.offsetTop <= y) current = i; });
+  navLinks.forEach(function(a, i){ a.classList.toggle("active", i === current); });
+}
+window.addEventListener("scroll", onScroll, {passive:true});
+onScroll();
+})();
+</script>
+</body>
+</html>
